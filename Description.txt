@@ -1,0 +1,13 @@
+https://mobs.mail.ru/apps/horo/v2/getHoroscopeBySignTTY?mp=android&sign_id=7&DeviceId=6719edec13b14f3581a30a834b3530e9&time_zone=GMT%2B0300&mpp=horo&udid=6719edec13b14f3581a30a834b3530e9&content_language=EN
+
+https://mobs.mail.ru/apps/horo/v2/getHoroscopeBySignTTY?mp=android&sign_id=7&DeviceId=6719edec13b14f3581a30a834b3530e9&time_zone=GMT%2B0300&mpp=horo&udid=6719edec13b14f3581a30a834b3530e9&content_language=ru_RU
+https://mobs.mail.ru/apps/horo/v2/getHoroscopeBySignTTY?mp=android&sign_id=4&DeviceId=9e0cbd6c14114487a2dc86146bd26bf9&time_zone=GMT%2B0000&mpp=horo&udid=9e0cbd6c14114487a2dc86146bd26bf9&content_language=EN
+http://mobs.mail.ru/apps/horo/v2/getHoroscopeBySignTTY?sign_id=10&time_zone=GMT%2B0300&content_language=fr_FR&mp=android&mmp=horo&udid=b76e1f10a49edb5540605eb934c9e098&DeviceId=b76e1f10a49edb5540605eb934c9e098&client=mobile&noMsg=Y&os=Android&os_version=4.4.2&ver=5.0(629)&device_vendor=DOOV&model=DOOV%20S2y&device_type=Smartphone&country=EN&language=en_US&timezone=GMT%2B03%3A00&first=googleplay&current=googleplay&device_id=b76e1f10a49edb5540605eb934c9e098
+
+@Гороскопы@ на каждый день и все 
+Horoscopes – Daily Zodiac Horo
+
+AstroLife: Гороскопы
+
+AstroLife: Daily Horoscopes
+Accurate astrological forecasts for all signs of the zodiac

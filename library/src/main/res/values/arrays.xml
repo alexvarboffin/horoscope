@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="rainbow">
+        <item>@color/c1</item>
+        <item>@color/c2</item>
+        <item>@color/c3</item>
+        <item>@color/c4</item>
+        <item>@color/c5</item>
+        <item>@color/c6</item>
+        <item>@color/c7</item>
+        <item>@color/c8</item>
+        <item>@color/c9</item>
+        <item>@color/c10</item>
+        <item>@color/c11</item>
+        <item>@color/c12</item>
+    </array>
+
+    <string-array name="range">
+        <item>Yesterday</item>
+        <item>Today</item>
+        <item>Tomorrow</item>
+        <item>A week</item>
+        <item>Month</item>
+        <item>Year</item>
+    </string-array>
+
+    <string-array name="images">
+        <item>@drawable/abc_ic_14</item>
+        <item>@drawable/abc_ic_15</item>
+        <item>@drawable/abc_ic_16</item>
+        <item>@drawable/abc_ic_19</item>
+        <item>@drawable/abc_ic_21</item>
+        <item>@drawable/abc_ic_22</item>
+    </string-array>
+
+    <integer-array name="icon2">
+        <item>@drawable/ic_sign_01</item>
+        <item>@drawable/ic_sign_02</item>
+        <item>@drawable/ic_sign_03</item>
+        <item>@drawable/ic_sign_04</item>
+        <item>@drawable/ic_sign_05</item>
+        <item>@drawable/ic_sign_06</item>
+        <item>@drawable/ic_sign_07</item>
+        <item>@drawable/ic_sign_08</item>
+        <item>@drawable/ic_sign_09</item>
+        <item>@drawable/ic_sign_10</item>
+        <item>@drawable/ic_sign_11</item>
+        <item>@drawable/ic_sign_12</item>
+    </integer-array>
+
+    <integer-array name="icon">
+        <item>@drawable/ic_aries</item>
+        <item>@drawable/ic_taurus</item>
+        <item>@drawable/ic_gemini</item>
+        <item>@drawable/ic_cancer</item>
+        <item>@drawable/ic_leo</item>
+        <item>@drawable/ic_virgo</item>
+        <item>@drawable/ic_libra</item>
+        <item>@drawable/ic_scorpio</item>
+        <item>@drawable/ic_sagittarius</item>
+        <item>@drawable/ic_capricorn</item>
+        <item>@drawable/ic_aquarius</item>
+        <item>@drawable/ic_pisces</item>
+    </integer-array>
+    <string-array name="sign_name">
+        <item>@string/sign_01</item>
+        <item>@string/sign_02</item>
+        <item>@string/sign_03</item>
+        <item>@string/sign_04</item>
+        <item>@string/sign_05</item>
+        <item>@string/sign_06</item>
+        <item>@string/sign_07</item>
+        <item>@string/sign_08</item>
+        <item>@string/sign_09</item>
+        <item>@string/sign_10</item>
+        <item>@string/sign_11</item>
+        <item>@string/sign_12</item>
+    </string-array>
+    <array name="colors">
+        <item>@color/zs_aries</item>
+        <item>@color/zs_taurus</item>
+        <item>@color/zs_gemini</item>
+        <item>@color/zs_cancer</item>
+        <item>@color/zs_leo</item>
+        <item>@color/zs_virgo</item>
+        <item>@color/zs_libra</item>
+        <item>@color/zs_scorpio</item>
+        <item>@color/zs_sagittarius</item>
+        <item>@color/zs_capricorn</item>
+        <item>@color/zs_aquarius</item>
+        <item>@color/zs_pisces</item>
+    </array>
+    <string-array name="sub_description">
+        <item>@string/sign_01_date</item>
+        <item>@string/sign_02_date</item>
+        <item>@string/sign_03_date</item>
+        <item>@string/sign_04_date</item>
+        <item>@string/sign_05_date</item>
+        <item>@string/sign_06_date</item>
+        <item>@string/sign_07_date</item>
+        <item>@string/sign_08_date</item>
+        <item>@string/sign_09_date</item>
+        <item>@string/sign_10_date</item>
+        <item>@string/sign_11_date</item>
+        <item>@string/sign_12_date</item>
+    </string-array>
+</resources>

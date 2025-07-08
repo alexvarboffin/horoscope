@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <style name="DialogHeaderTitleStyle">
+        <item name="android:layout_margin">@dimen/large_spacing</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/dialog_title_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+
+    <style name="AppTheme.Launcher" parent="AppTheme.NoActionBar">
+        <item name="android:windowBackground">@drawable/window_splash</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ToolbarTitle">
+        <item name="android:textSize">20sp</item>
+        <item name="fontPath">fonts/Roboto-Bold.ttf</item>
+    </style>
+
+    <style name="ToolbarSubTitle">
+        <item name="android:textSize">14sp</item>
+        <item name="fontPath">fonts/Roboto-Regular.ttf</item>
+    </style>
+    <!--parent="@android:style/Widget.CompoundButton.RadioButton"-->
+
+
+    <style name="MyRadioButton">
+        <!--<item name="android:textSize">18sp</item>-->
+        <!--<item name="fontPath">fonts/Roboto-Regular.ttf</item>-->
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">fill</item>
+        <!--<item name="android:padding">1sp</item>-->
+    </style>
+
+
+    <style name="NestedScrollBarStyle">
+        <item name="android:scrollbarFadeDuration">2</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:fillViewport">true</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!--style="@android:style/TextAppearance.Medium"-->
+    <style name="InstructionTextView" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:textSize">30sp</item>
+        <item name="fontPath">fonts/Roboto-Bold.ttf</item>
+        <!--<item name="android:textColor">@color/colorPrimary</item>-->
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+
+    <!--...-->
+    <style name="FloatButton" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="fontPath">fonts/Roboto-Bold.ttf</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="background">@drawable/btn_selector</item>
+    </style>
+
+    <!--android:style/Widget.Holo.Light.ActionButton.Overflow-->
+    <!--@string/abc_action_menu_overflow_description-->
+    <!--Style to replace actionbar overflow icon. set item 'android:actionOverflowButtonStyle' in AppTheme -->
+
+    <!--<style name="MyActionButtonOverflow" parent="Widget.AppCompat.ActionButton.Overflow">-->
+    <!--<item name="android:src">@drawable/a_abc_ic_menu_overflow_material</item>-->
+    <!--<item name="android:background">?android:attr/actionBarItemBackground</item>-->
+    <!--<item name="android:contentDescription" />-->
+    <!--</style>-->
+
+
+
+
+
+
+</resources>

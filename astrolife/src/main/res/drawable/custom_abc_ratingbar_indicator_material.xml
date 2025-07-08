@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!--original !!!-->
+    <!--<item-->
+    <!--android:id="@android:id/background"-->
+    <!--android:drawable="@drawable/abc_ic_star_black_36dp" />-->
+    <!--<item-->
+    <!--android:id="@android:id/secondaryProgress"-->
+    <!--android:drawable="@drawable/abc_ic_star_half_black_36dp" />-->
+    <!--<item android:id="@android:id/progress">-->
+    <!--<bitmap android:src="@drawable/abc_ic_star_black_36dp" />-->
+    <!--</item>-->
+
+    <!--custom !!!-->
+    <item
+        android:id="@android:id/background"
+        android:drawable="@drawable/star_empty" />
+    <item
+        android:id="@android:id/secondaryProgress"
+        android:drawable="@drawable/star_half" />
+    <item android:id="@android:id/progress">
+        <bitmap android:src="@drawable/star" />
+    </item>
+</layer-list>

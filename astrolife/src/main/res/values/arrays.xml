@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+
+    <string-array name="images">
+        <item>@drawable/abc_ic_14</item>
+        <item>@drawable/abc_ic_15</item>
+        <item>@drawable/abc_ic_16</item>
+        <item>@drawable/abc_ic_19</item>
+        <item>@drawable/abc_ic_21</item>
+        <item>@drawable/abc_ic_22</item>
+
+    </string-array>
+
+
+</resources>

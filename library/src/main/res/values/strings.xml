@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="saved">Saved</string>
+    <string name="progress_saved">Saved</string>
+    <string name="file_saved">File Saved</string>
+    <string name="action_share_text">Share Text</string>
+    <string name="action_share_image">Share Image</string>
+    <string name="copy_to_buffer">Copied to Clipboard</string>
+
+
+    <string name="permission_title_needed">Permission needed</string>
+    <string name="this_permission_is_needed">This permission is needed</string>
+    <string name="permission_received">Permission received</string>
+    <string name="permission_not_allow">Permission not allow</string>
+
+    <string name="connection_error">Error loading data</string>
+    <string name="error_data_load">Error loading data</string>
+    <string name="action_repeat">Repeat</string>
+    <string name="tab_description">Zodiac sign %1$s</string>
+    <string name="title_in_love">%1$s in love</string>
+    <string name="title_money_and_career">Money and career</string>
+    <string name="title_sexuality">%1$s and relationships</string>
+    <string name="title_health">Health</string>
+    <string name="title_compatibility">Compatibility</string>
+    <string name="tab_about_sign">About</string>
+
+    <string name="tab_kids">Kids</string>
+    <string name="tab_man">Man</string>
+    <string name="tab_woman">Woman</string>
+    <string name="tab_love">Love</string>
+    <string name="tab_career">Career</string>
+    <string name="tab_sexuality">Sexyality</string>
+    <string name="tab_health">Health</string>
+    <string name="tab_compatibility">Compatibility</string>
+    <string name="title_color_scheme">Color Scheme</string>
+
+    <string name="horo_week">Horoscope for the week</string>
+    <string name="horo_yesterday">Horoscope on yesterday</string>
+    <string name="horo_month">Horoscope for a month</string>
+    <string name="horo_year">Horoscope for %1$d</string>
+    <string name="horo_tomorrow">Horoscope for tomorrow</string>
+    <string name="horo_today">Horoscope for today</string>
+
+    <string name="action_about">About</string>
+
+    <string name="sign_01_date">March 21 - April 20</string>
+    <string name="sign_02_date">April 21 - May 21</string>
+    <string name="sign_03_date">May 22 - June 21</string>
+    <string name="sign_04_date">June 22 - July 23</string>
+    <string name="sign_05_date">July 24 - August 23</string>
+    <string name="sign_06_date">August 24 - September 23</string>
+    <string name="sign_07_date">September 24 - October 23</string>
+    <string name="sign_08_date">October 24 - November 22</string>
+    <string name="sign_09_date">November 23 - December 21</string>
+    <string name="sign_10_date">December 22 - January 20</string>
+    <string name="sign_11_date">January 21 - February 19</string>
+    <string name="sign_12_date">February 20 - March 20</string>
+
+    <string name="action_share">Share</string>
+    <string name="action_gallery">@null</string>
+
+
+    <string name="sign_01">Aries</string>
+    <string name="sign_02">Taurus</string>
+    <string name="sign_03">Twins</string>
+    <string name="sign_04">Cancer </string>
+    <string name="sign_05">Leo</string>
+    <string name="sign_06">Virgo</string>
+    <string name="sign_07">Libra</string>
+    <string name="sign_08">Scorpio</string>
+    <string name="sign_09">Sagittarius</string>
+    <string name="sign_10">Capricorn</string>
+    <string name="sign_11">Aquarius</string>
+    <string name="sign_12">Fish </string>
+
+    <string name="defFontName" translatable="false">fonts/pacifico.ttf</string>
+</resources>

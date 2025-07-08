@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="horo_week">Гороскоп на неделю</string>
+    <string name="horo_yesterday">Гороскоп на вчера</string>
+    <string name="horo_month">Гороскоп на месяц</string>
+    <string name="horo_year">Гороскоп на %1$d год</string>
+    <string name="horo_tomorrow">Гороскоп на завтра</string>
+    <string name="horo_today">Гороскоп на сегодня</string>
+
+    <string name="sign_01_date">21 марта - 20 апреля</string>
+    <string name="sign_02_date">21 апреля - 21 мая</string>
+    <string name="sign_03_date">22 мая - 21 июня</string>
+    <string name="sign_04_date">22 июня - 23 июля</string>
+    <string name="sign_05_date">24 июля - 23 августа</string>
+    <string name="sign_06_date">24 августа - 23 сентября</string>
+    <string name="sign_07_date">24 сентября - 23 октября</string>
+    <string name="sign_08_date">24 октября - 22 ноября</string>
+    <string name="sign_09_date">23 ноября - 21 декабря</string>
+    <string name="sign_10_date">22 декабря - 20 января</string>
+    <string name="sign_11_date">21 января - 19 февраля</string>
+    <string name="sign_12_date">20 февраля - 20 марта</string>
+
+
+
+    <string name="action_gallery">@null</string>
+
+
+    <string name="action_share">Поделиться</string>
+    <string name="title_color_scheme">Цветовая схема</string>
+    <string name="action_about">О программе</string>
+    <string name="tab_career">Карьера</string>
+    <string name="tab_compatibility">Совместимость</string>
+    <string name="tab_health">Здоровье</string>
+    <string name="tab_kids">Дети</string>
+    <string name="tab_love">Любовь</string>
+    <string name="tab_man">Мужчина</string>
+    <string name="tab_sexuality">Отношения</string>
+    <string name="tab_woman">Женщина</string>
+
+    <string name="connection_error">Нет подключения</string>
+    <string name="error_data_load">Ошибка загрузки данных</string>
+    <string name="action_repeat">Повторить</string>
+
+
+    <string name="tab_description">Знак зодиака %1$s</string>
+    <string name="title_in_love">%1$s в любви</string>
+    <string name="title_money_and_career">Деньги и карьера</string>
+    <string name="title_sexuality">%1$s и отношения</string>
+    <string name="title_health">Здоровье</string>
+    <string name="title_compatibility">Совместимость</string>
+    <string name="tab_about_sign">О знаке</string>
+
+
+    <string-array name="range">
+        <item>Вчера</item>
+        <item>Сегодня</item>
+        <item>Завтра</item>
+        <item>Неделя</item>
+        <item>Месяц</item>
+        <item>Год</item>
+    </string-array>
+
+    <string name="sign_01">Овен</string>
+    <string name="sign_02">Телец</string>
+    <string name="sign_03">Близнецы</string>
+    <string name="sign_04">Рак</string>
+    <string name="sign_05">Лев</string>
+    <string name="sign_06">Дева</string>
+    <string name="sign_07">Весы</string>
+    <string name="sign_08">Скорпион</string>
+    <string name="sign_09">Стрелец</string>
+    <string name="sign_10">Козерог</string>
+    <string name="sign_11">Водолей</string>
+    <string name="sign_12">Рыбы</string>
+
+    <string name="saved">Сохранено</string>
+    <string name="progress_saved">Сохранено</string>
+    <string name="file_saved">Файл сохранен</string>
+    <string name="action_share_text">Поделиться текстом</string>
+    <string name="action_share_image">Поделиться изображением</string>
+    <string name="copy_to_buffer">Скопировано в буфер обмена</string>
+
+
+    <string name="permission_title_needed">Требуется разрешение</string>
+    <string name="this_permission_is_needed">Это разрешение необходимо</string>
+    <string name="permission_received">Разрешение получено</string>
+    <string name="permission_not_allow">Разрешение не получено</string>
+
+</resources>

@@ -1,0 +1,27 @@
+<resources>
+
+    <string name="app_name">Horoscopes</string>
+    <string name="app_name0">Secret Astrology Horoscopes</string>
+
+    <string name="app_name_full">Daily Horoscope</string>
+
+
+    <!--About Dialog-->
+    <string name="d_about_text">Find out what the future holds for you!
+\nA free horoscope for each day will warn of successful events or impending troubles.
+\nFollow the predictions for your sign and the horoscopes of your friends!
+    </string>
+    <!--<string name="d_about_info" formatted="false">-->
+    <!--Версия: . %s\nСборка: %s\nalexvarboffin@gmail.com-->
+    <!--</string>-->
+
+
+    <string name="action_copy">Copy</string>
+    <string name="action_save">Save</string>
+
+    <string name="app_watermark">Azarra Daily Horoscope</string>
+
+    <string name="defFontName" translatable="false">fonts/montserrat_bold.ttf</string>
+    <string name="splash_loading" translatable="false">Loading…</string>
+
+</resources>

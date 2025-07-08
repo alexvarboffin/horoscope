@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/iv_step_image"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_toEndOf="@+id/container_2"-->
+        <!--android:layout_toRightOf="@+id/container_2"-->
+        <!--android:orientation="vertical">-->
+
+        <!--&lt;!&ndash;android.support.v7.widget.AppCompatRatingBar-->
+            <!--android:id="@+id/rb_rate"-->
+            <!--style="@style/CustomRatingBar"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="@dimen/rb_star_size"-->
+            <!--android:layout_margin="0dp"-->
+            <!--android:clickable="false"-->
+            <!--android:focusable="false"-->
+
+
+            <!--android:isIndicator="true"-->
+            <!--android:max="100"-->
+            <!--android:maxHeight="@dimen/rb_star_size"-->
+            <!--android:minHeight="@dimen/rb_star_size"-->
+            <!--android:numStars="3"-->
+            <!--android:padding="0dp"-->
+
+            <!--android:stepSize="0.1" /&ndash;&gt;-->
+
+
+        <!--&lt;!&ndash;<RatingBar&ndash;&gt;-->
+        <!--&lt;!&ndash;android:theme="@style/RatingBar"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:id="@+id/rb_rate"&ndash;&gt;-->
+
+        <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+
+        <!--&lt;!&ndash;android:layout_alignParentEnd="true"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_alignParentRight="true"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_alignParentTop="true"&ndash;&gt;-->
+
+        <!--&lt;!&ndash;android:rating="3"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:stepSize="0.5"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:numStars="3"&ndash;&gt;-->
+        <!--&lt;!&ndash;/>&ndash;&gt;-->
+        <!---->
+    <!--</RelativeLayout>-->
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/ic_sign_01" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/ic_sign_02" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/ic_sign_03" />
+
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/ic_sign_04" />
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/ic_sign_05" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/ic_sign_06" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/ic_sign_07" />
+
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/ic_sign_08" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/ic_sign_09" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/ic_sign_10" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/ic_sign_11" />
+
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:srcCompat="@drawable/ic_sign_12" />
+    </LinearLayout>
+</LinearLayout>

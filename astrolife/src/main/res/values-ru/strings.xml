@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Гороскопы</string>
+    <string name="app_name0">Secret Astrology Horoscopes</string>
+
+    <string name="app_name_full">Гороскоп на каждый день</string>
+
+
+
+
+
+    <!--About Dialog-->
+    <string name="d_about_text">Узнай, что готовит для тебя будущее!
+        \nБесплатный гороскоп на каждый день предупредит об удачных событиях или надвигающихся неприятностях.
+\n\nСледи за предсказаниями для своего знака и за гороскопами своих друзей!</string>
+    <!--<string name="d_about_info" formatted="false">-->
+    <!--Версия: . %s\nСборка: %s\nalexvarboffin@gmail.com-->
+    <!--</string>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <string name="action_copy">Копировать</string>
+    <string name="action_save">Сохранить</string>
+
+    <string name="app_watermark"></string>
+
+
+
+
+
+
+</resources>

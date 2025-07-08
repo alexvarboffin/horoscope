@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="c1">#E10D01</color>
+    <color name="c2">#53cc03</color>
+    <color name="c3">#d87704</color>
+    <color name="c4">#d703c3</color>
+    <color name="c5">#d5cd00</color>
+    <color name="c6">#2772c5</color>
+    <color name="c7">#46f200</color>
+    <color name="c8">#f92e41</color>
+    <color name="c9">#ba36fb</color>
+    <color name="c10">#3631cb</color>
+    <color name="c11">#e622cc</color>
+    <color name="c12">#5E35B1</color>
+
+    <color name="zs_aries">#1b83b8</color>
+    <color name="zs_taurus">#f17600</color>
+    <color name="zs_gemini">#621946</color>
+    <color name="zs_cancer">#319517</color>
+    <color name="zs_leo">#83cd54</color>
+    <color name="zs_virgo">#bb1e49</color>
+    <color name="zs_libra">#20b9cb</color>
+    <color name="zs_scorpio">#b71c46</color>
+    <color name="zs_sagittarius">#8d47c4</color>
+    <color name="zs_capricorn">#641d49</color>
+    <color name="zs_aquarius">#85ca53</color>
+    <color name="zs_pisces">#8a188a</color>
+
+    <!--    <color name="appbarBackground">#73000000</color>-->
+    <color name="appbarBackground">#D3000000</color>
+
+    <color name="colorPreloader">#303030</color>
+</resources>

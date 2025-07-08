@@ -1,0 +1,1240 @@
+# This is a configuration file for ProGuard.
+# http://proguard.sourceforge.net/index.html#manual/usage.html
+#
+# Starting with version 2.2 of the Android plugin for Gradle, this file is distributed together with
+# the plugin and unpacked at build-time. The files in $ANDROID_HOME are no longer maintained and
+# will be ignored by new version of the Android plugin for Gradle.
+
+# Optimizations: If you don't want to optimize, use the proguard-android.txt configuration file
+# instead of this one, which turns off the optimization flags.
+# Adding optimization introduces certain risks, since for example not all optimizations performed by
+# ProGuard works on all versions of Dalvik.  The following flags turn off various optimizations
+# known to have issues, but the list may not be complete or up to date. (The "arithmetic"
+# optimization can be used if you are only targeting Android 2.0 or later.)  Make sure you test
+# thoroughly if you go this route.
+-optimizations !code/simplification/arithmetic,!code/simplification/cast,!field/*,!class/merging/*
+-optimizationpasses 5
+-allowaccessmodification
+
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-verbose
+
+# Preserve some attributes that may be required for reflection.
+-keepattributes *Annotation*,Signature,InnerClasses,EnclosingMethod
+
+-keep public class com.google.vending.licensing.ILicensingService
+-keep public class com.android.vending.licensing.ILicensingService
+-keep public class com.google.android.vending.licensing.ILicensingService
+-dontnote com.android.vending.licensing.ILicensingService
+-dontnote com.google.vending.licensing.ILicensingService
+-dontnote com.google.android.vending.licensing.ILicensingService
+
+# For native methods, see http://proguard.sourceforge.net/manual/examples.html#native
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+
+# Keep setters in Views so that animations can still work.
+-keepclassmembers public class * extends android.view.View {
+    void set*(***);
+    *** get*();
+}
+
+# We want to keep methods in Activity that could be used in the XML attribute onClick.
+-keepclassmembers class * extends android.app.Activity {
+    public void *(android.view.View);
+}
+
+# For enumeration classes, see http://proguard.sourceforge.net/manual/examples.html#enumerations
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keepclassmembers class * implements android.os.Parcelable {
+    public static final ** CREATOR;
+}
+
+-keepclassmembers class **.R$* {
+    public static <fields>;
+}
+
+# Preserve annotated Javascript interface methods.
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
+}
+
+# The support libraries contains references to newer platform versions.
+# Don't warn about those in case this app is linking against an older
+# platform version. We know about them, and they are safe.
+-dontnote android.support.**
+-dontnote androidx.**
+-dontwarn android.support.**
+-dontwarn androidx.**
+
+# This class is deprecated, but remains for backward compatibility.
+-dontwarn android.util.FloatMath
+
+# Understand the @Keep support annotation.
+-keep class android.support.annotation.Keep
+-keep class androidx.annotation.Keep
+
+-keep @android.support.annotation.Keep class * {*;}
+-keep @androidx.annotation.Keep class * {*;}
+
+-keepclasseswithmembers class * {
+    @android.support.annotation.Keep <methods>;
+}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <methods>;
+}
+
+-keepclasseswithmembers class * {
+    @android.support.annotation.Keep <fields>;
+}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <fields>;
+}
+
+-keepclasseswithmembers class * {
+    @android.support.annotation.Keep <init>(...);
+}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <init>(...);
+}
+
+# These classes are duplicated between android.jar and org.apache.http.legacy.jar.
+-dontnote org.apache.http.**
+-dontnote android.net.http.**
+
+# These classes are duplicated between android.jar and core-lambda-stubs.jar.
+-dontnote java.lang.invoke.**
+
+-printconfiguration proguard-merged-config.txt
+
+
+
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+# Uncomment this to preserve the line number information for
+# debugging stack traces.
+#-keepattributes SourceFile,LineNumberTable
+
+# If you keep the line number information, uncomment this to
+# hide the original source file name.
+#-renamesourcefileattribute SourceFile
+
+#Other - D:\android\GitHub\facebook\
+#D:\\source\\CallRecorder\\app\\
+
+#-optimizationpasses 5
+#-dontusemixedcaseclassnames
+#-dontskipnonpubliclibraryclasses
+#-dontpreverify
+#-verbose
+#-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
+
+# Allow methods with the same signature, except for the return type,
+# to get the same obfuscation name.
+
+#-overloadaggressively
+
+#-optimizationpasses 30
+#-mergeinterfacesaggressively
+#-dontpreverify
+#-optimizations !code/simplification/arithmetic
+## Put all obfuscated classes into the nameless root package.
+
+
+-flattenpackagehierarchy ''
+#-repackageclasses ''#res override -> flattenpackagehierarchy
+
+#-useuniqueclassmembernames
+#-keeppackagenames doNotKeepAThing
+#
+## Allow classes and class members to be made public.
+#
+#-allowaccessmodification
+
+#-obfuscationdictionary D:\android\GitHub\facebook\proguard\examples\dictionaries\keywords.txt
+-obfuscationdictionary D:\android\GitHub\exe.txt
+
+#D:\android\GitHub\facebook\proguard\examples\dictionaries\keywords.txt
+
+
+-classobfuscationdictionary D:\android\GitHub\facebook\proguard\examples\dictionaries\compact.txt
+-packageobfuscationdictionary D:\android\GitHub\facebook\proguard\examples\dictionaries\windows.txt
+
+#-classobfuscationdictionary D:\android\GitHub\exe.txt
+#-packageobfuscationdictionary D:\android\GitHub\exe.txt
+
+
+#-keep public class * extends android.app.Activity
+#-keep public class * extends android.app.Application
+#-keep public class * extends android.app.Service
+#-keep public class * extends android.content.BroadcastReceiver
+#-keep public class * extends android.content.ContentProvider
+#-keep public class com.android.vending.licensing.ILicensingService
+
+
+#-dontnote
+# OkHttp and Servlet optional dependencies
+-keepattributes Signature
+-keepattributes Annotation
+-keep class okhttp3.* { *; }
+-keep interface okhttp3.* { *; }
+-dontwarn okhttp3.**
+
+
+-dontwarn com.google.appengine.**
+-dontwarn javax.servlet.**
+
+# Support classes for compatibility with older API versions
+
+-dontwarn android.support.**
+-dontnote android.support.**
+
+-keepattributes *Annotation*
+-keepattributes Signature
+-dontwarn com.squareup.**
+-keep class com.squareup.** { *; }
+
+-keep class android.support.v7.widget.SearchView { *; }
+
+-printconfiguration config.txt
+
+
+
+
+-assumenosideeffects class android.util.Log {
+    public static boolean isLoggable(java.lang.String, int);
+    public static int v(...);
+    public static int i(...);
+    public static int w(...);
+    public static int d(...);
+    public static int e(...);
+}
+
+
+
+-dontwarn okio.**
+
+#-dontwarn retrofit2.Platform$Java8
+#-dontwarn retrofit.Platform$Java8
+#-dontwarn retrofit2.Platform$Java8
+#-dontwarn rx.internal.util.**
+
+# -keepclassmembers class com.psyberia.sms_regcom.rest.beans.** {
+#   *;
+# }
+
+-dontnote android.net.http.*
+-dontnote org.apache.commons.codec.**
+-dontnote org.apache.http.**
+
+ #Firebase SDK 2.0.0:
+
+-keep class com.firebase.** { *; }
+
+
+-keep class org.apache.** { *; }
+
+-keepnames class com.fasterxml.jackson.** { *; }
+-keepnames class javax.servlet.** { *; }
+-keepnames class org.ietf.jgss.** { *; }
+-dontwarn org.w3c.dom.**
+-dontwarn org.joda.time.**
+-dontwarn org.shaded.apache.**
+-dontwarn org.ietf.jgss.**
+
+
+#-keep class com.dropbox.core.** {*;}
+#-keep class com.dropbox.** {*;}
+
+
+-keep class com.google.common.** {*;}
+-keep class com.square.picasso.** {*;}
+-keep class javax.servlet.http.** {*;}
+
+-keep class okio.Okio.** {*;}
+
+
+#-keep class com.google.android.gms.auth.** {*;}
+#-keep class com.google.android.gms.drive.** {*;}
+
+
+#GMS
+#-keep public class com.google.android.gms.* { public *; }
+-keep class com.google.android.gms.** {*;}
+-dontwarn com.google.android.gms.**
+
+-keep class * extends java.util.ListResourceBundle {
+    protected java.lang.Object[][] getContents();
+}
+
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
+    public static final *** NULL;
+}
+
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * {
+    @com.google.android.gms.common.annotation.KeepName *;
+}
+
+-keepnames class * implements android.os.Parcelable {
+    public static final ** CREATOR;
+}
+
+
+#butterknife
+# Retain generated class which implement Unbinder.
+-keep public class * implements butterknife.Unbinder { public <init>(**, android.view.View); }
+
+# Prevent obfuscation of types which use ButterKnife annotations since the simple name
+# is used to reflectively look up the generated ViewBinding.
+-keep class butterknife.*
+-keepclasseswithmembernames class * { @butterknife.* <methods>; }
+-keepclasseswithmembernames class * { @butterknife.* <fields>; }
+
+
+-keep class com.google.android.material.ControlContainerLayout
+-keep public class * extends com.github.anastr.speedviewlib.SpeedView
+-keep class com.google.android.material.ControlContainerLayout** {*;}
+-keep class com.google.android.material.ControlContainerLayout**
+-keepclassmembers class com.google.android.material.ControlContainerLayout** {
+    *;
+}
+
+
+
+-keep public class * extends android.app.Fragment {
+    <init>(...);
+}
+-keep public class * extends android.support.v4.app.Fragment {
+    <init>(...);
+}
+
+# Firebase pojo Objects
+-keep class ai.horo.astrolife.free.gethoroscope.horoscope.rest.** { *; }
+
+#AndroidX
+-keep class com.google.android.material.** { *; }
+
+-dontwarn com.google.android.material.**
+-dontnote com.google.android.material.**
+
+-dontwarn androidx.**
+-keep class androidx.** { *; }
+-keep interface androidx.** { *; }
+
+
+-keep class androidx.fragment.app.Fragment { *; }
+
+
+
+
+-dontwarn okio.**
+-dontwarn retrofit2.Platform$Java8
+
+#REMOVE_COMMENTS
+#You can remove logging calls with this option in proguard-project.txt:
+-assumenosideeffects class android.util.Log {
+    public static boolean isLoggable(java.lang.String, int);
+    public static int v(...);
+    public static int i(...);
+    public static int w(...);
+    public static int d(...);
+    public static int e(...);
+}
+-dontwarn okio.**
+-dontwarn retrofit2.Platform$Java8
+-dontwarn retrofit.Platform$Java8
+-dontwarn retrofit2.Platform$Java8
+-dontwarn rx.internal.util.**
+
+ -keepclassmembers class ai.horo.astrolife.free.gethoroscope.horoscope.beans.** {
+   *;
+ }
+
+
+
+
+
+ #--------------------------------------------------------
+ # Retrofit
+ #--------------------------------------------------------
+ #-dontwarn retrofit2.**
+ #-dontwarn org.codehaus.mojo.**
+ #-keep class retrofit2.** { *; }
+
+
+ #-keepattributes RuntimeVisibleAnnotations
+ #-keepattributes RuntimeInvisibleAnnotations
+ #-keepattributes RuntimeVisibleParameterAnnotations
+ #-keepattributes RuntimeInvisibleParameterAnnotations
+
+ #-keepattributes EnclosingMethod
+
+
+
+ #-keepclasseswithmembers interface * {
+ #    @retrofit2.* <methods>;
+ #}
+
+
+ # Retrofit 2.X
+ ## https://square.github.io/retrofit/ ##
+
+ -dontwarn retrofit2.**
+ -keep class retrofit2.** { *; }
+ -keepattributes Signature
+ -keepattributes Exceptions
+
+ -keepclasseswithmembers class * {
+     @retrofit2.http.* <methods>;
+ }
+
+ -dontwarn okhttp3.**
+
+ #Firebase SDK 2.0.0:
+
+  -keep class com.firebase.** { *; }
+  -keep class org.apache.** { *; }
+  -keepnames class com.fasterxml.jackson.** { *; }
+  -keepnames class javax.servlet.** { *; }
+  -keepnames class org.ietf.jgss.** { *; }
+  -dontwarn org.w3c.dom.**
+  -dontwarn org.joda.time.**
+  -dontwarn org.shaded.apache.**
+  -dontwarn org.ietf.jgss.**
+
+  # Only necessary if you downloaded the SDK jar directly instead of from maven.
+  -keep class com.shaded.fasterxml.jackson.** { *; }
+
+  #Last resort:
+
+ #---------~
+  -keep class !com.psyberia.** { *; }
+  -keep public class com.google.firebase.** { public *; }
+
+
+
+
+  # Add this global rule
+ -keepattributes Signature
+
+  # This rule will properly ProGuard all the model classes in
+  # the package com.yourcompany.models. Modify to fit the structure
+  # of your app.
+  #+++++++++++++++++++++++++++++
+  #+++++++++++++++++++++++++++++
+
+
+  #ButterKnife
+  -keep class butterknife.** { *; }
+  -dontwarn butterknife.internal.**
+  -keep class **$$ViewBinder { *; }
+
+  -keepclasseswithmembernames class * {
+      @butterknife.* <fields>;
+  }
+
+  -keepclasseswithmembernames class * {
+      @butterknife.* <methods>;
+  }
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:19
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:65
+-keep class com.crashlytics.android.CrashlyticsInitProvider { <init>(); }
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:56
+-keep class com.google.android.gms.ads.AdActivity { <init>(); }
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:70
+-keep class com.google.android.gms.ads.MobileAdsInitProvider { <init>(); }
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:126
+-keep class com.google.android.gms.common.api.GoogleApiActivity { <init>(); }
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:81
+-keep class com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver { <init>(); }
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:95
+-keep class com.google.android.gms.measurement.AppMeasurementJobService { <init>(); }
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:76
+-keep class com.google.android.gms.measurement.AppMeasurementReceiver { <init>(); }
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:91
+-keep class com.google.android.gms.measurement.AppMeasurementService { <init>(); }
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:100
+-keep class com.google.firebase.components.ComponentDiscoveryService { <init>(); }
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:111
+-keep class com.google.firebase.iid.FirebaseInstanceIdReceiver { <init>(); }
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:120
+-keep class com.google.firebase.provider.FirebaseInitProvider { <init>(); }
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:19
+-keep class ai.horo.astrolife.free.gethoroscope.horoscope.Application { <init>(); }
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:30
+-keep class ai.horo.astrolife.free.gethoroscope.horoscope.ui.activity.MainActivity { <init>(); }
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\merged_manifests\release\AndroidManifest.xml:40
+-keep class ai.horo.astrolife.free.gethoroscope.horoscope.ui.activity.ScoopSettingsActivity { <init>(); }
+# Referenced at D:\walhalla\sdk\android\UI\ui\build\intermediates\packaged_res\release\layout\banner_ad_container.xml:2
+# Referenced at D:\walhalla\sdk\android\UI\ui\build\intermediates\packaged_res\release\layout\ad_content.xml:8
+-keep class android.support.appcompat.widget.CardView { <init>(...); }
+
+# Referenced at D:\walhalla\sdk\android\UI\ui\build\intermediates\packaged_res\release\layout\app_bar_drawer.xml:2
+-keep class android.support.coordinatorlayout.widget.CoordinatorLayout { <init>(...); }
+
+# Referenced at D:\walhalla\sdk\android\UI\ui\build\intermediates\packaged_res\release\layout\wh_activity_drawer.xml:2
+-keep class android.support.drawerlayout.widget.DrawerLayout { <init>(...); }
+
+# Referenced at D:\walhalla\sdk\android\UI\ui\build\intermediates\packaged_res\release\layout\app_simple_list.xml:12
+-keep class android.support.recyclerview.widget.RecyclerView { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout-watch-v20\abc_alert_dialog_title_material.xml:53
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_alert_dialog_title.xml:41
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_alert_dialog_actions.xml:45
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_alert_dialog.xml:51
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_alert_dialog_title_material.xml:57
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_alert_dialog_material.xml:52
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_alert_dialog_button_bar_material.xml:43
+-keep class android.widget.Space { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_select_dialog_material.xml:23
+-keep class androidx.appcompat.app.AlertController$RecycleListView { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_action_menu_item_layout.xml:17
+-keep class androidx.appcompat.view.menu.ActionMenuItemView { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_expanded_menu_layout.xml:17
+-keep class androidx.appcompat.view.menu.ExpandedMenuView { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_popup_menu_item_layout.xml:17
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_list_menu_item_layout.xml:17
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_cascading_menu_item_layout.xml:20
+-keep class androidx.appcompat.view.menu.ListMenuItemView { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_screen_toolbar.xml:27
+-keep class androidx.appcompat.widget.ActionBarContainer { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_screen_toolbar.xml:43
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_action_mode_bar.xml:19
+-keep class androidx.appcompat.widget.ActionBarContextView { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_screen_toolbar.xml:17
+-keep class androidx.appcompat.widget.ActionBarOverlayLayout { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_action_menu_layout.xml:17
+-keep class androidx.appcompat.widget.ActionMenuView { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_activity_chooser_view.xml:19
+-keep class androidx.appcompat.widget.ActivityChooserView$InnerLayout { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_alert_dialog.xml:17
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_alert_dialog_material.xml:18
+-keep class androidx.appcompat.widget.AlertDialogLayout { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout-watch-v20\abc_alert_dialog_button_bar_material.xml:18
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_alert_dialog_actions.xml:26
+# Referenced at D:\walhalla\Horoscope\scoop\build\intermediates\packaged_res\release\layout\item_layout_flavor.xml:91
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_alert_dialog_button_bar_material.xml:26
+-keep class androidx.appcompat.widget.ButtonBarLayout { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_screen_content_include.xml:19
+-keep class androidx.appcompat.widget.ContentFrameLayout { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_alert_dialog_title.xml:36
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_alert_dialog_title_material.xml:45
+-keep class androidx.appcompat.widget.DialogTitle { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_screen_simple_overlay_action_mode.xml:23
+-keep class androidx.appcompat.widget.FitWindowsFrameLayout { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_screen_simple.xml:17
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_dialog_title_material.xml:22
+-keep class androidx.appcompat.widget.FitWindowsLinearLayout { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_search_view.xml:75
+-keep class androidx.appcompat.widget.SearchView$SearchAutoComplete { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout-v26\abc_screen_toolbar.xml:37
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\toolbar_tabbed.xml:67
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\toolbar_simple.xml:13
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\toolbar_01.xml:69
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\include_list_viewpager.xml:43
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_tab_more.xml:46
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_tab_holder_2.xml:47
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\fragment_tab_holder.xml:66
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_gallery.xml:15
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\app_bar_main_tab.xml:27
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\app_bar_drawer_simple.xml:17
+# Referenced at D:\walhalla\sdk\android\UI\ui\build\intermediates\packaged_res\release\layout\app_bar_drawer.xml:14
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\activity_scoop_settings.xml:22
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_screen_toolbar.xml:36
+-keep class androidx.appcompat.widget.Toolbar { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_screen_simple_overlay_action_mode.xml:32
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_screen_simple.xml:25
+-keep class androidx.appcompat.widget.ViewStubCompat { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\936afef5ad6efc49d0671ef994f8ce17\res\layout\browser_actions_context_menu_page.xml:5
+-keep class androidx.browser.browseractions.BrowserActionsFallbackMenuView { <init>(...); }
+
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\row_lesson_item.xml:11
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_default_prognosis.xml:15
+# Referenced at D:\walhalla\sdk\android\UI\ui\build\intermediates\packaged_res\release\layout\ad_app_install.xml:8
+-keep class androidx.cardview.widget.CardView { <init>(...); }
+
+# Referenced at D:\walhalla\Horoscope\scoop\build\intermediates\packaged_res\release\layout\item_layout_flavor.xml:2
+-keep class androidx.constraintlayout.widget.ConstraintLayout { <init>(...); }
+
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\main.xml:10
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\include_list_viewpager.xml:17
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_tab_more.xml:6
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_tab_holder_2.xml:4
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\fragment_tab_holder.xml:2
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_home.xml:4
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\design_bottom_sheet_dialog.xml:26
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\app_bar_main_tab.xml:14
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\app_bar_drawer_simple.xml:7
+-keep class androidx.coordinatorlayout.widget.CoordinatorLayout { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_alert_dialog.xml:40
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_default_prognosis.xml:6
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\0f4beaf314ad86a2ecb0adafe05b92ba\res\layout\abc_alert_dialog_material.xml:41
+-keep class androidx.core.widget.NestedScrollView { <init>(...); }
+
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\activity_main.xml:6
+-keep class androidx.drawerlayout.widget.DrawerLayout { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_calendar_horizontal.xml:29
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_home.xml:36
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_gallery.xml:26
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\activity_scoop_settings.xml:45
+-keep class androidx.recyclerview.widget.RecyclerView { <init>(...); }
+
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_tab_more.xml:99
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_tab_holder_2.xml:99
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\fragment_tab_holder.xml:103
+-keep class androidx.swiperefreshlayout.widget.SwipeRefreshLayout { <init>(...); }
+
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\include_list_viewpager.xml:55
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\content_scrolling.xml:7
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\app_bar_main_tab.xml:66
+-keep class androidx.viewpager.widget.ViewPager { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_calendar_viewpager.xml:18
+-keep class androidx.viewpager2.widget.ViewPager2 { <init>(...); }
+
+# Referenced at D:\walhalla\sdk\android\UI\ui\build\intermediates\packaged_res\release\layout\ad_app_install.xml:92
+-keep class com.google.android.gms.ads.formats.MediaView { <init>(...); }
+
+# Referenced at D:\walhalla\sdk\android\UI\ui\build\intermediates\packaged_res\release\layout\ad_app_install.xml:2
+-keep class com.google.android.gms.ads.formats.NativeAppInstallAdView { <init>(...); }
+
+# Referenced at D:\walhalla\sdk\android\UI\ui\build\intermediates\packaged_res\release\layout\ad_content.xml:2
+-keep class com.google.android.gms.ads.formats.NativeContentAdView { <init>(...); }
+
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\toolbar_tabbed.xml:2
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\toolbar_simple.xml:6
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\toolbar_01.xml:14
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\include_list_viewpager.xml:23
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_tab_more.xml:13
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_tab_holder_2.xml:13
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\fragment_tab_holder.xml:13
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_gallery.xml:10
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\app_bar_main_tab.xml:20
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\app_bar_drawer_simple.xml:12
+# Referenced at D:\walhalla\sdk\android\UI\ui\build\intermediates\packaged_res\release\layout\app_bar_drawer.xml:9
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\activity_scoop_settings.xml:13
+-keep class com.google.android.material.appbar.AppBarLayout { <init>(...); }
+
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\toolbar_tabbed.xml:15
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\toolbar_01.xml:21
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\include_list_viewpager.xml:29
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_tab_more.xml:26
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_tab_holder_2.xml:26
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\fragment_tab_holder.xml:25
+-keep class com.google.android.material.appbar.CollapsingToolbarLayout { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\test_toolbar_surface.xml:16
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\test_toolbar_elevation.xml:16
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\test_toolbar_custom_background.xml:16
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\test_toolbar.xml:16
+-keep class com.google.android.material.appbar.MaterialToolbar { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_picker_header_fullscreen.xml:31
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_calendar_month_navigation.xml:27
+-keep class com.google.android.material.button.MaterialButton { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\test_reflow_chipgroup.xml:25
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\test_action_chip.xml:17
+-keep class com.google.android.material.chip.Chip { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\test_reflow_chipgroup.xml:19
+-keep class com.google.android.material.chip.ChipGroup { <init>(...); }
+
+# Referenced at D:\walhalla\sdk\android\UI\ui\build\intermediates\packaged_res\release\layout\app_bar_drawer.xml:25
+-keep class com.google.android.material.floatingactionbutton.FloatingActionButton { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\design_bottom_navigation_item.xml:27
+-keep class com.google.android.material.internal.BaselineLayout { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_picker_header_toggle.xml:18
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\design_text_input_start_icon.xml:18
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\design_text_input_end_icon.xml:18
+-keep class com.google.android.material.internal.CheckableImageButton { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\design_navigation_item.xml:17
+-keep class com.google.android.material.internal.NavigationMenuItemView { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\design_navigation_menu.xml:17
+-keep class com.google.android.material.internal.NavigationMenuView { <init>(...); }
+
+# Referenced at D:\walhalla\sdk\android\UI\ui\build\intermediates\packaged_res\release\layout\wh_activity_drawer.xml:25
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\activity_main.xml:23
+-keep class com.google.android.material.navigation.NavigationView { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_calendar_month.xml:18
+-keep class com.google.android.material.picker.MaterialCalendarGridView { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_layout_snackbar.xml:18
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\design_layout_snackbar.xml:18
+-keep class com.google.android.material.snackbar.Snackbar$SnackbarLayout { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_layout_snackbar_include.xml:18
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\design_layout_snackbar_include.xml:18
+-keep class com.google.android.material.snackbar.SnackbarContentLayout { <init>(...); }
+
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\toolbar_tabbed.xml:52
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\include_list_viewpager.xml:35
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_tab_more.xml:67
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\fragment_tab_holder_2.xml:68
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\fragment_tab_holder.xml:79
+# Referenced at D:\walhalla\Horoscope\app\build\intermediates\incremental\mergeReleaseResources\stripped.dir\layout\app_bar_main_tab.xml:39
+-keep class com.google.android.material.tabs.TabLayout { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_picker_text_input_date_range.xml:32
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_picker_text_input_date.xml:31
+-keep class com.google.android.material.textfield.TextInputEditText { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_picker_text_input_date_range.xml:26
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\mtrl_picker_text_input_date.xml:26
+-keep class com.google.android.material.textfield.TextInputLayout { <init>(...); }
+
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\text_view_without_line_height.xml:17
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\text_view_with_theme_line_height.xml:17
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\text_view_with_line_height_from_style.xml:17
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\text_view_with_line_height_from_layout.xml:17
+# Referenced at C:\Users\combo\.gradle\caches\transforms-2\files-2.1\1822db52c5c6b97b3f3792b1bfc3fc06\res\layout\text_view_with_line_height_from_appearance.xml:17
+-keep class com.google.android.material.textview.MaterialTextView { <init>(...); }
+
+# Referenced at D:\walhalla\Horoscope\app\src\main\res\layout\gallery_thumbnail.xml:2
+-keep class com.walhalla.common.ui.helper.SquareLayout { <init>(...); }
+
+
+-dontwarn android.databinding.ViewDataBinding
+-dontwarn android.databinding.ViewDataBinding$LiveDataListener
+
+# instant apps load these via reflection so we need to keep them.
+-keep public class * extends android.databinding.DataBinderMapper
+
+
+# Copyright (C) 2015 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# CoordinatorLayout resolves the behaviors of its child components with reflection.
+-keep public class * extends androidx.coordinatorlayout.widget.CoordinatorLayout$Behavior {
+    public <init>(android.content.Context, android.util.AttributeSet);
+    public <init>();
+}
+
+# Make sure we keep annotations for CoordinatorLayout's DefaultBehavior
+-keepattributes RuntimeVisible*Annotation*
+
+# Copyright (C) 2018 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# MaterialComponentsViewInflater inflates Material Components rather than their AppCompat counterparts.
+-keep class com.google.android.material.theme.MaterialComponentsViewInflater { *; }
+
+# Copyright (C) 2018 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# An inner class of RecyclerView is part of MaterialPickerDialogFragment.java 
+-keep class androidx.recyclerview.widget.RecyclerView { *; }
+
+
+# Copyright (C) 2018 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Ensure that reflectively-loaded inflater is not obfuscated. This can be
+# removed when we stop supporting AAPT1 builds.
+-keepnames class androidx.appcompat.app.AppCompatViewInflater
+
+# aapt is not able to read app::actionViewClass and app:actionProviderClass to produce proguard
+# keep rules. Add a commonly used SearchView to the keep list until b/109831488 is resolved.
+-keep class androidx.appcompat.widget.SearchView { <init>(...); }
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in /Developer/android-sdk-osx/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+-keep class io.github.inflationx.calligraphy3.* { *; }
+-keep class io.github.inflationx.calligraphy3.*$* { *; }
+
+-dontwarn com.crashlytics.android.ndk.CrashlyticsNdk
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public class * extends com.bumptech.glide.module.AppGlideModule
+-keep public enum com.bumptech.glide.load.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+
+# Uncomment for DexGuard only
+#-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+# Retrofit does reflection on generic parameters. InnerClasses is required to use Signature and
+# EnclosingMethod is required to use InnerClasses.
+-keepattributes Signature, InnerClasses, EnclosingMethod
+
+# Retain service method parameters when optimizing.
+-keepclassmembers,allowshrinking,allowobfuscation interface * {
+    @retrofit2.http.* <methods>;
+}
+
+# Ignore annotation used for build tooling.
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+
+# Ignore JSR 305 annotations for embedding nullability information.
+-dontwarn javax.annotation.**
+
+# Guarded by a NoClassDefFoundError try/catch and only used when on the classpath.
+-dontwarn kotlin.Unit
+
+# Top-level functions that can only be used by Kotlin.
+-dontwarn retrofit2.-KotlinExtensions
+
+-keep public class com.google.android.gms.ads.internal.ClientApi {
+  <init>();
+}
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.ads.zzdqd {
+  <fields>;
+}
+
+# Auto-generated proguard rule with obfuscated symbol
+-dontwarn com.google.android.gms.internal.ads.zzaui
+# Copyright (C) 2016 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# CoordinatorLayout resolves the behaviors of its child components with reflection.
+-keep public class * extends androidx.coordinatorlayout.widget.CoordinatorLayout$Behavior {
+    public <init>(android.content.Context, android.util.AttributeSet);
+    public <init>();
+}
+
+# Make sure we keep annotations for CoordinatorLayout's DefaultBehavior and ViewPager's DecorView
+-keepattributes *Annotation*
+
+# Copyright (C) 2017 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Keep a field in transition that is used to keep a reference to weakly-referenced object
+-keepclassmembers class androidx.transition.ChangeBounds$* extends android.animation.AnimatorListenerAdapter {
+  androidx.transition.ChangeBounds$ViewBounds mViewBounds;
+}
+
+# Copyright (C) 2016 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# keep setters in VectorDrawables so that animations can still work.
+-keepclassmembers class androidx.vectordrawable.graphics.drawable.VectorDrawableCompat$* {
+   void set*(***);
+   *** get*();
+}
+
+# Keep implementations of the AdMob mediation adapter interfaces. Adapters for
+# third party ad networks implement these interfaces and are invoked by the
+# AdMob SDK via reflection.
+
+-keep class * implements com.google.android.gms.ads.mediation.MediationAdapter {
+  public *;
+}
+-keep class * implements com.google.ads.mediation.MediationAdapter {
+  public *;
+}
+-keep class * implements com.google.android.gms.ads.mediation.customevent.CustomEvent {
+  public *;
+}
+-keep class * implements com.google.ads.mediation.customevent.CustomEvent {
+  public *;
+}
+-keep class * extends com.google.android.gms.ads.mediation.MediationAdNetworkAdapter {
+  public *;
+}
+-keep class * extends com.google.android.gms.ads.mediation.Adapter {
+  public *;
+}
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.ads.zzdqd {
+  <fields>;
+}
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzey {
+  <fields>;
+}
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzey {
+  <fields>;
+}
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzey {
+  <fields>;
+}
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzey {
+  <fields>;
+}
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.ads.zzdqd {
+  <fields>;
+}
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzey {
+  <fields>;
+}
+
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.measurement.zzey {
+  <fields>;
+}
+
+-dontwarn com.google.firebase.components.Component$Instantiation
+-dontwarn com.google.firebase.components.Component$ComponentType
+-keep class * implements com.google.firebase.components.ComponentRegistrar
+
+# b/35135904 Ensure that proguard will not strip the mResultGuardian.
+-keepclassmembers class com.google.android.gms.common.api.internal.BasePendingResult {
+  com.google.android.gms.common.api.internal.BasePendingResult$ReleasableResultGuardian mResultGuardian;
+}
+
+# Proguard flags for consumers of the Google Play services SDK
+# https://developers.google.com/android/guides/setup#add_google_play_services_to_your_project
+
+# Keep SafeParcelable NULL value, needed for reflection by DowngradeableSafeParcel
+-keepclassmembers public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
+    public static final *** NULL;
+}
+
+# Needed for Parcelable/SafeParcelable classes & their creators to not get renamed, as they are
+# found via reflection.
+-keep class com.google.android.gms.common.internal.ReflectedParcelable
+-keepnames class * implements com.google.android.gms.common.internal.ReflectedParcelable
+-keepclassmembers class * implements android.os.Parcelable {
+  public static final *** CREATOR;
+}
+
+# Keep the classes/members we need for client functionality.
+-keep @interface androidx.annotation.Keep
+-keep @androidx.annotation.Keep class *
+-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <fields>;
+}
+-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <methods>;
+}
+
+# Keep the names of classes/members we need for client functionality.
+-keep @interface com.google.android.gms.common.annotation.KeepName
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * {
+  @com.google.android.gms.common.annotation.KeepName *;
+}
+
+# Keep Dynamite API entry points
+-keep @interface com.google.android.gms.common.util.DynamiteApi
+-keep @com.google.android.gms.common.util.DynamiteApi public class * {
+  public <fields>;
+  public <methods>;
+}
+
+# Needed when building against pre-Marshmallow SDK.
+-dontwarn android.security.NetworkSecurityPolicy
+
+# Needed when building against Marshmallow SDK.
+-dontwarn android.app.Notification
+
+# Protobuf has references not on the Android boot classpath
+-dontwarn sun.misc.Unsafe
+-dontwarn libcore.io.Memory
+
+# Internal Google annotations for generating Proguard keep rules.
+-dontwarn com.google.android.apps.common.proguard.UsedBy*
+
+# Annotations referenced by the SDK but whose definitions are contained in
+# non-required dependencies.
+-dontwarn javax.annotation.**
+-dontwarn org.checkerframework.**
+# Copyright (C) 2015 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# When layoutManager xml attribute is used, RecyclerView inflates
+#LayoutManagers' constructors using reflection.
+-keep public class * extends androidx.recyclerview.widget.RecyclerView$LayoutManager {
+    public <init>(android.content.Context, android.util.AttributeSet, int, int);
+    public <init>();
+}
+
+-keepclassmembers class androidx.recyclerview.widget.RecyclerView {
+    public void suppressLayout(boolean);
+    public boolean isLayoutSuppressed();
+}
+# Copyright (C) 2017 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Prevent Parcelable objects from being removed or renamed.
+-keep class android.support.v4.media.** implements android.os.Parcelable {
+    public static final android.os.Parcelable$Creator *;
+}
+
+# Prevent Parcelable objects from being removed or renamed.
+-keep class androidx.media.** implements android.os.Parcelable {
+    public static final android.os.Parcelable$Creator *;
+}
+# aapt2 is not (yet) keeping FQCNs defined in the appComponentFactory <application> attribute
+-keep class androidx.core.app.CoreComponentFactory
+
+-keepattributes *Annotation*
+
+-keepclassmembers enum androidx.lifecycle.Lifecycle$Event {
+    <fields>;
+}
+
+-keep !interface * implements androidx.lifecycle.LifecycleObserver {
+}
+
+-keep class * implements androidx.lifecycle.GeneratedAdapter {
+    <init>(...);
+}
+
+-keepclassmembers class ** {
+    @androidx.lifecycle.OnLifecycleEvent *;
+}
+-keep public class * implements androidx.versionedparcelable.VersionedParcelable
+-keep public class android.support.**Parcelizer { *; }
+-keep public class androidx.**Parcelizer { *; }
+-keep public class androidx.versionedparcelable.ParcelImpl
+
+-keepclassmembers,allowobfuscation class * extends androidx.lifecycle.ViewModel {
+    <init>();
+}
+
+-keepclassmembers,allowobfuscation class * extends androidx.lifecycle.AndroidViewModel {
+    <init>(android.app.Application);
+}
+
+# Copyright (C) 2019 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+-keepclassmembers,allowobfuscation class * implements androidx.savedstate.SavedStateRegistry$AutoRecreated {
+    <init>();
+}
+
+-keep,allowobfuscation @interface androidx.annotation.Keep
+-keep @androidx.annotation.Keep class * {*;}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <methods>;
+}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <fields>;
+}
+
+-keepclasseswithmembers class * {
+    @androidx.annotation.Keep <init>(...);
+}
+
+# JSR 305 annotations are for embedding nullability information.
+-dontwarn javax.annotation.**
+
+# A resource is loaded with a relative path so the package of this class must be preserved.
+-keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
+
+# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
+-dontwarn org.codehaus.mojo.animal_sniffer.*
+
+# OkHttp platform used only on JVM and when Conscrypt dependency is available.
+-dontwarn okhttp3.internal.platform.ConscryptPlatform
+
+# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
+-dontwarn org.codehaus.mojo.animal_sniffer.*
+
+# Answers Proguard Config
+-dontwarn com.google.firebase.analytics.FirebaseAnalytics
+-dontwarn com.google.firebase.analytics.FirebaseAnalytics$Event
+-dontwarn com.google.firebase.analytics.FirebaseAnalytics$Param
+# Fabric Proguard Config
+-keep class com.google.android.gms.common.GooglePlayServicesUtil {*;}
+-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient {*;}
+-keep class com.google.android.gms.ads.identifier.AdvertisingIdClient$Info {*;}
+-keep class com.google.android.gms.measurement.AppMeasurement$OnEventListener {*;}
+-keep class com.google.android.gms.measurement.AppMeasurement {
+    static com.google.android.gms.measurement.AppMeasurement getInstance(android.content.Context, java.lang.String, java.lang.String);
+    void registerOnMeasurementEventListener(com.google.android.gms.measurement.AppMeasurement$OnEventListener);
+}
+-keep class com.google.firebase.FirebaseApp {
+    static com.google.firebase.FirebaseApp getInstance();
+    boolean isDataCollectionDefaultEnabled();
+}
+
+-ignorewarnings

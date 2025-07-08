@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/title"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/primaryColor"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+
+            tools:background="#FF5555" />
+
+        <ImageView
+            android:id="@+id/primaryColorDark"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+
+            tools:background="#FF0000" />
+
+        <ImageView
+            android:id="@+id/accentColor"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+
+            tools:background="#33cc99" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="29dp"
+
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="9dp"
+
+        android:layout_toEndOf="@+id/title"
+        android:layout_toRightOf="@+id/title"
+        android:tint="@color/green_500"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/title"
+        app:layout_constraintLeft_toRightOf="@+id/title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_checkbox_marked_circle_outline_black"
+        tools:visibility="visible"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:text="Bacon Flavor"
+        android:textColor="?android:attr/textColorPrimary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.ButtonBarLayout
+        android:id="@+id/daynight_options"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_alignLeft="@+id/title"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        tools:visibility="visible">
+
+        <Button
+            android:id="@+id/opt_auto"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:text="@string/daynight_auto" />
+
+        <Button
+            android:id="@+id/opt_system"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:text="@string/daynight_system" />
+
+        <Button
+            android:id="@+id/opt_off"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:text="@string/daynight_off" />
+
+        <Button
+            android:id="@+id/opt_on"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:text="@string/daynight_on" />
+
+    </androidx.appcompat.widget.ButtonBarLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

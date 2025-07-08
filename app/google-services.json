@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "878979445503",
+    "firebase_url": "https://horoscope-ed30d.firebaseio.com",
+    "project_id": "horoscope-ed30d",
+    "storage_bucket": "horoscope-ed30d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878979445503:android:24f5c531576410c1",
+        "android_client_info": {
+          "package_name": "com.walhalla.horoscope"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878979445503-43mg1s7cb1kdlm9mdh29avhgdkop1gtp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.walhalla.horoscope",
+            "certificate_hash": "78f142ed9f21a43b7d99b6b24387c2471e395ac0"
+          }
+        },
+        {
+          "client_id": "878979445503-arabbasre5lb4s52s9nk55qqsv4hv48b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.walhalla.horoscope",
+            "certificate_hash": "bc2388bfe19be7212211b95e2d2b7abbf0a735e8"
+          }
+        },
+        {
+          "client_id": "878979445503-ga3c6o601k9rdbfmvtif6qc9fdvba52b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-C6NqU0t1owxm95goWG9JQnPjF1gtSq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "878979445503-ga3c6o601k9rdbfmvtif6qc9fdvba52b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

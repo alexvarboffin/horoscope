@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Dark  -->
+    <!-- Base application theme. NoActionBar-->
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorControlHighlight</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <!--<item name="android:actionOverflowButtonStyle">@style/MyActionButtonOverflow</item>-->
+
+        <!-- Theming Elements -->
+        <item name="toolbarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="toolbarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="toolbarItemTint">#fff</item>
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!--item name="android:background">@drawable/bg_main</item-->
+        <!--@drawable/background-->
+        <item name="android:windowBackground">@color/colorPreloader</item>
+        <!--item name="android:colorBackground">..</item-->
+    </style>
+    <style name="Theme.Scoop" parent="AppTheme.NoActionBar">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <!--<item name="android:actionOverflowButtonStyle">@style/MyActionButtonOverflow</item>-->
+    </style>
+    <!--=========================================================================================-->
+
+    <style name="Theme.Scoop.Sand">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/sand_darker</item>
+        <item name="colorPrimaryDark">@color/sand_dark</item>
+        <item name="colorAccent">@color/sand_primary</item>
+        <item name="colorControlHighlight">@color/sand_light</item>
+    </style>
+
+    <style name="Theme.Scoop.Orange">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/orange_darker</item>
+        <item name="colorPrimaryDark">@color/orange_dark</item>
+        <item name="colorAccent">@color/orange_primary</item>
+        <item name="colorControlHighlight">@color/orange_light</item>
+        <!--<item name="android:textViewStyle">@style/InstructionTextView</item>-->
+    </style>
+
+    <style name="Theme.Scoop.Candy">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/candy_darker</item>
+        <item name="colorPrimaryDark">@color/candy_dark</item>
+        <item name="colorAccent">@color/candy_primary</item>
+        <item name="colorControlHighlight">@color/candy_light</item>
+    </style>
+
+    <style name="Theme.Scoop.Blossom">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/blossom_darker</item>
+        <item name="colorPrimaryDark">@color/blossom_dark</item>
+        <item name="colorAccent">@color/blossom_primary</item>
+        <item name="colorControlHighlight">@color/blossom_light</item>
+    </style>
+
+    <style name="Theme.Scoop.Grape">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/grape_darker</item>
+        <item name="colorPrimaryDark">@color/grape_dark</item>
+        <item name="colorAccent">@color/grape_primary</item>
+        <item name="colorControlHighlight">@color/grape_light</item>
+    </style>
+
+    <style name="Theme.Scoop.Deep">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/deep_darker</item>
+        <item name="colorPrimaryDark">@color/deep_dark</item>
+        <item name="colorAccent">@color/deep_primary</item>
+        <item name="colorControlHighlight">@color/deep_light</item>
+    </style>
+
+    <style name="Theme.Scoop.Sky">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/sky_darker</item>
+        <item name="colorPrimaryDark">@color/sky_dark</item>
+        <item name="colorAccent">@color/sky_primary</item>
+        <item name="colorControlHighlight">@color/sky_light</item>
+    </style>
+
+    <style name="Theme.Scoop.Grass">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/grass_darker</item>
+        <item name="colorPrimaryDark">@color/grass_dark</item>
+        <item name="colorAccent">@color/grass_primary</item>
+        <item name="colorControlHighlight">@color/grass_light</item>
+    </style>
+
+    <style name="Theme.Scoop.Dark">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/dark_darker</item>
+        <item name="colorPrimaryDark">@color/dark_dark</item>
+        <item name="colorAccent">@color/dark_primary</item>
+        <item name="colorControlHighlight">@color/dark_light</item>
+    </style>
+
+    <style name="Theme.Scoop.Snow">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/snow_darker</item>
+        <item name="colorPrimaryDark">@color/snow_dark</item>
+        <item name="colorAccent">@color/snow_primary</item>
+        <item name="colorControlHighlight">@color/snow_light</item>
+    </style>
+
+    <style name="Theme.Scoop.Sea">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/sea_darker</item>
+        <item name="colorPrimaryDark">@color/sea_dark</item>
+        <item name="colorAccent">@color/sea_primary</item>
+        <item name="colorControlHighlight">@color/sea_light</item>
+    </style>
+
+    <style name="Theme.Scoop.Blood">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/blood_darker</item>
+        <item name="colorPrimaryDark">@color/blood_dark</item>
+        <item name="colorAccent">@color/blood_primary</item>
+        <item name="colorControlHighlight">@color/blood_light</item>
+    </style>
+
+
+    <!-- Alternate 1 -->
+    <style name="Theme.Scoop.t1">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/colorPrimaryAlt1</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlt1</item>
+        <item name="colorAccent">@color/colorAccentAlt1</item>
+        <item name="colorControlHighlight">@color/colorControlHighlightAlt1</item>
+    </style>
+
+    <style name="Theme.Scoop.t2">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/colorPrimaryAlt2</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlt2</item>
+        <item name="colorAccent">@color/colorAccentAlt2</item>
+        <item name="colorControlHighlight">@color/colorControlHighlightAlt2</item>
+    </style>
+
+    <style name="Theme.Scoop.t3">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/colorPrimaryAlt3</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlt3</item>
+        <item name="colorAccent">@color/colorAccentAlt3</item>
+        <item name="colorControlHighlight">@color/colorControlHighlightAlt3</item>
+    </style>
+
+    <style name="Theme.Scoop.t4">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/t4</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlt1</item>
+        <item name="colorAccent">@color/colorAccentAlt1</item>
+        <item name="colorControlHighlight">@color/colorControlHighlightAlt1</item>
+    </style>
+
+    <style name="Theme.Scoop.t5">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/t5</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlt1</item>
+        <item name="colorAccent">@color/colorAccentAlt1</item>
+        <item name="colorControlHighlight">@color/colorControlHighlightAlt1</item>
+    </style>
+
+    <style name="Theme.Scoop.t6">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/t6</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlt1</item>
+        <item name="colorAccent">@color/colorAccentAlt1</item>
+        <item name="colorControlHighlight">@color/colorControlHighlightAlt1</item>
+    </style>
+
+    <style name="Theme.Scoop.t7">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/t7</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlt1</item>
+        <item name="colorAccent">@color/colorAccentAlt1</item>
+        <item name="colorControlHighlight">@color/colorControlHighlightAlt1</item>
+    </style>
+
+    <style name="Theme.Scoop.t8">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/t8</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlt1</item>
+        <item name="colorAccent">@color/colorAccentAlt1</item>
+        <item name="colorControlHighlight">@color/colorControlHighlightAlt1</item>
+    </style>
+
+    <style name="Theme.Scoop.t9">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/t9</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlt1</item>
+        <item name="colorAccent">@color/colorAccentAlt1</item>
+        <item name="colorControlHighlight">@color/colorControlHighlightAlt1</item>
+    </style>
+
+    <style name="Theme.Scoop.t10">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/t10</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlt1</item>
+        <item name="colorAccent">@color/colorAccentAlt1</item>
+        <item name="colorControlHighlight">@color/colorControlHighlightAlt1</item>
+    </style>
+
+    <style name="Theme.Scoop.t11">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/t11</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlt1</item>
+        <item name="colorAccent">@color/colorAccentAlt1</item>
+        <item name="colorControlHighlight">@color/colorControlHighlightAlt1</item>
+    </style>
+
+    <style name="Theme.Scoop.t12">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/t12</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlt1</item>
+        <item name="colorAccent">@color/colorAccentAlt1</item>
+        <item name="colorControlHighlight">@color/colorControlHighlightAlt1</item>
+    </style>
+
+    <style name="Theme.Scoop.t13">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/t13</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlt1</item>
+        <item name="colorAccent">@color/colorAccentAlt1</item>
+        <item name="colorControlHighlight">@color/colorControlHighlightAlt1</item>
+    </style>
+
+    <style name="Theme.Scoop.t14">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/t14</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlt1</item>
+        <item name="colorAccent">@color/colorAccentAlt1</item>
+        <item name="colorControlHighlight">@color/colorControlHighlightAlt1</item>
+    </style>
+
+    <style name="Theme.Scoop.t15">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/t15</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlt1</item>
+        <item name="colorAccent">@color/colorAccentAlt1</item>
+        <item name="colorControlHighlight">@color/colorControlHighlightAlt1</item>
+    </style>
+
+    <style name="Theme.Scoop.t16">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/t16</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlt1</item>
+        <item name="colorAccent">@color/colorAccentAlt1</item>
+        <item name="colorControlHighlight">@color/colorControlHighlightAlt1</item>
+    </style>
+
+    <style name="Theme.Scoop.t17">
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/t17</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlt1</item>
+        <item name="colorAccent">@color/colorAccentAlt1</item>
+        <item name="colorControlHighlight">@color/colorControlHighlightAlt1</item>
+    </style>
+
+
+    <!--=====================================-->
+
+
+    <!-- Light -->
+    <style name="Theme.Scoop.Light" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorControlHighlight</item>
+
+        <!-- Theming Elements -->
+        <item name="toolbarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="toolbarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="toolbarItemTint">#fff</item>
+
+    </style>
+
+    <!-- DayNight -->
+    <style name="Theme.Scoop.DayNight" parent="Theme.AppCompat.DayNight.NoActionBar">
+
+        <!-- Palatte -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorControlHighlight</item>
+
+        <!-- Theming Elements -->
+        <item name="toolbarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="toolbarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="toolbarItemTint">#fff</item>
+
+    </style>
+</resources>

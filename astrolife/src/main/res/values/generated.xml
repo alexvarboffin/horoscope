@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+
+    <string name="app_id" translatable="false">ca-app-pub-5111357348858303~2871723960</string>
+    <string name="b1" translatable="false">ca-app-pub-5111357348858303/6770289144</string>
+
+    <!--    <string name="url_privacy_policy" translatable="false">https://horoscope-ed30d.firebaseapp.com/privacy_policy.html</string>-->
+    <string name="url_privacy_policy" translatable="false">https://horoscopeastrolife.web.app/privacy_policy.html</string>
+
+
+</resources>

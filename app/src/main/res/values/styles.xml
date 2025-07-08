@@ -1,0 +1,19 @@
+<resources>
+    <style name="AppTheme.H2" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">#0C0C0C</item>
+        <item name="android:textSize">12sp</item>
+        <!--        <item name="android:textStyle">italic</item>-->
+    </style>
+
+    <style name="AppTheme.Control" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">#000000</item>
+        <!--        <item name="android:textStyle">bold</item>-->
+    </style>
+
+    <style name="DescriptionTextViewStyle" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+<!--        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>-->
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>

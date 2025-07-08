@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground">
+    <!--android:clickable="true"-->
+    <!--android:background="?android:attr/selectableItemBackground"-->
+    <!--android:clickable="true"-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/card_margin"
+        app:elevation="3dp"
+        android:focusable="true"
+        app:cardCornerRadius="@dimen/card_album_radius"
+        tools:targetApi="lollipop">
+
+
+        <!--android:foreground="?android:attr/selectableItemBackground"-->
+        <RelativeLayout
+            android:id="@+id/rootContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--android:scaleType="fitXY"  @dimen/album_cover_height
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"-->
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="8dp"
+                android:contentDescription="@null"
+                tools:src="@drawable/ic_aries"
+                tools:tint="@color/amber_100" />
+
+
+            <!--@dimen/album_title_padding-->
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_icon"
+                android:gravity="center"
+                android:paddingLeft="@dimen/album_title_padding"
+                android:paddingTop="0dp"
+                android:paddingRight="@dimen/album_title_padding"
+                android:textColor="@color/album_title"
+                android:textSize="@dimen/album_title"
+                android:textStyle="bold"
+                tools:text="Album Title" />
+
+            <TextView
+                android:id="@+id/tv_steps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:gravity="center"
+                android:paddingLeft="@dimen/album_title_padding"
+                android:paddingRight="@dimen/album_title_padding"
+                android:paddingBottom="@dimen/songs_count_padding_bottom"
+                android:textSize="@dimen/lesson_item_description_text"
+                android:textColor="@color/album_title"
+                tools:text="count" />
+
+            <include
+                layout="@layout/include_m_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_icon"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
