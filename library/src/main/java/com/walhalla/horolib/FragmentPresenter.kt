@@ -75,7 +75,7 @@ class FragmentPresenter(activity: android.app.Activity, view: PresenterView) :
         watermark: android.widget.TextView,
         success: com.walhalla.horolib.databinding.ItemSuccessBinding
     ) {
-        watermark.setVisibility(android.view.View.VISIBLE)
+        watermark.visibility = android.view.View.VISIBLE
         val bitmap = createBitmap(success.llBackground.getWidth(), success.llBackground.getHeight())
         val canvas = android.graphics.Canvas(bitmap)
         success.llBackground.draw(canvas)
@@ -96,7 +96,7 @@ class FragmentPresenter(activity: android.app.Activity, view: PresenterView) :
             val imageUri: android.net.Uri? =
                 resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
             if (imageUri != null) {
-                DLog.d("@" + imageUri.getPath())
+                DLog.d("@" + imageUri.path)
             }
 
             Toast.makeText(activity, R.string.file_saved, Toast.LENGTH_SHORT).show()
@@ -104,16 +104,14 @@ class FragmentPresenter(activity: android.app.Activity, view: PresenterView) :
             success.ivSaveQuote.setImageResource(R.drawable.ic_menu_check)
 
             try {
-                fos = resolver.openOutputStream(
-                    java.util.Objects.requireNonNull<Uri?>(imageUri)
-                )
+                fos = resolver.openOutputStream(java.util.Objects.requireNonNull<Uri>(imageUri))
                 bitmap.compress(android.graphics.Bitmap.CompressFormat.JPEG, 100, fos!!)
                 fos.flush()
                 fos.close()
                 try {
                     MediaScannerConnection.scanFile(
                         activity, kotlin.arrayOf<kotlin.String?>(
-                            imageUri!!.getPath()
+                            imageUri!!.path
                         ), null,
                         MediaScannerConnection.OnScanCompletedListener { path: String?, uri: Uri? ->
                             DLog.d(
@@ -127,7 +125,7 @@ class FragmentPresenter(activity: android.app.Activity, view: PresenterView) :
             } catch (e: java.io.IOException) {
                 DLog.handleException(e)
             }
-            watermark.setVisibility(android.view.View.INVISIBLE)
+            watermark.visibility = android.view.View.INVISIBLE
         } else {
             val outputStream: java.io.FileOutputStream?
             val sdCard = android.os.Environment.getExternalStorageDirectory()

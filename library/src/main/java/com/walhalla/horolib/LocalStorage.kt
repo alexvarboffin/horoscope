@@ -1,40 +1,33 @@
-package com.walhalla.horolib;
-
-import android.content.Context;
-import android.content.SharedPreferences;
-
-import androidx.preference.PreferenceManager;
+package com.walhalla.horolib
 
 
-public class LocalStorage {
+import android.content.SharedPreferences
+import androidx.preference.PreferenceManager
+import androidx.core.content.edit
 
-//    private static LocalStorage instance = null;
-    private SharedPreferences preferences;
-
-    public LocalStorage(Context context) {
-        this.preferences = PreferenceManager.getDefaultSharedPreferences(context);
-    }
+class LocalStorage(context: android.content.Context) {
+    //    private static LocalStorage instance = null;
+    private val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 
 
     //    public synchronized static LocalStorage getInstance() {
-//        if (instance == null) {
-//            instance = new LocalStorage();
-//        }
-//
-//        return instance;
-//    }
-    private SharedPreferences sharedPreferences() {
-        return preferences;
+    //        if (instance == null) {
+    //            instance = new LocalStorage();
+    //        }
+    //
+    //        return instance;
+    //    }
+    private fun sharedPreferences(): SharedPreferences {
+        return preferences
     }
 
 
-    public boolean licenseAgree() {
-        return preferences.getBoolean("LicenseAgree", false);
+    fun licenseAgree(): kotlin.Boolean {
+        return preferences.getBoolean("LicenseAgree", false)
     }
 
 
-    public void licenseAgree(boolean b) {
-        preferences.edit().putBoolean("LicenseAgree", b).apply();
+    fun licenseAgree(b: kotlin.Boolean) {
+        preferences.edit { putBoolean("LicenseAgree", b) }
     }
-
 }

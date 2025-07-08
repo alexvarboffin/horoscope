@@ -61,7 +61,7 @@ dependencies {
 
     // UI
     api("io.github.inflationx:viewpump:2.1.1")
-    api(libs.androidx.preference.kts)
+    api(libs.androidx.preference.ktx)
     implementation(libs.calligraphy3) {
         exclude(group = "com.android.support")
     }

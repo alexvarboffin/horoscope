@@ -1,4 +1,4 @@
-rootProject.name = "horoscope"
+rootProject.name = "HoroscopeAndroid"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
@@ -27,15 +27,16 @@ pluginManagement {
 dependencyResolutionManagement {
     repositories {
         mavenLocal()
-        google {
-            mavenContent {
-                includeGroupAndSubgroups("androidx")
-                includeGroupAndSubgroups("com.android")
-                includeGroupAndSubgroups("com.google")
-                maven("https://maven.google.com")
-                maven("https://dl.bintray.com/videolan/Android")
-            }
-        }
+        google()
+//        google {
+//            mavenContent {
+//                includeGroupAndSubgroups("androidx")
+//                includeGroupAndSubgroups("com.android")
+//                includeGroupAndSubgroups("com.google")
+//            }
+//        }
+        maven("https://maven.google.com")
+        maven("https://dl.bintray.com/videolan/Android")
         mavenCentral()
         maven("https://jitpack.io")
     }

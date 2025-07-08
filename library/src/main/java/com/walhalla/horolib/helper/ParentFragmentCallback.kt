@@ -1,14 +1,12 @@
-package com.walhalla.horolib.helper;
+package com.walhalla.horolib.helper
 
 /**
  * Created by combo on 10/22/2017.
  */
+interface ParentFragmentCallback {
+    fun onFinish(tag: String, state: Boolean)
 
-public interface ParentFragmentCallback {
+    fun refreshData()
 
-    void onFinish(String tag, boolean state);
-
-    void refreshData();
-
-    void shareData(String buffer);
+    fun shareData(buffer: String)
 }
